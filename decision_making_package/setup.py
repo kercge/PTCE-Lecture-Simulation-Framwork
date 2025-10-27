@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'decision_making_node = decision_making_package.decision_making_node:main',
+            'custom_decision_making_node = decision_making_package.custom_decision_making_package:main',
         ],
     },
 )
