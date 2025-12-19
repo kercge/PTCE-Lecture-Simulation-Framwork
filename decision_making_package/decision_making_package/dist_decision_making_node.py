@@ -158,10 +158,7 @@ class DistDecisionMakingNode(Node):
                         self.Index = 1
 
                     elif distance_ped_to_cross <= 5 and distance_veh_to_cross < 10 or intention_value >= 0.6: # Collision zone 
-                        self.Index = 4
-#
- #                       if intention_value > 0.7: # Full stop to allow safe crossing
-  #                         self.Index = 4 
+                        self.Index = 2
 
                 elif np.dot(v_ped_1, r_ped_1) > 0: # Passed
                         self.Index = 3
@@ -187,17 +184,12 @@ class DistDecisionMakingNode(Node):
             Kp = 0.5 
             Ki = 0.15 
 
-        elif self.Index == 2:  # Collision zone
-            base_speed = 0.0
-            Kp = 0.3
-            Ki = 0.2
-
         elif self.Index == 3:  # Passed pedestrian 
             base_speed = 6.0 
             Kp = 0.45 
             Ki = 0.08 
         
-        elif self.Index == 4:  # Full stop 
+        elif self.Index == 2:  # Full stop 
             base_speed = 0.0 
             Kp = 0.7
             Ki = 0.15 
