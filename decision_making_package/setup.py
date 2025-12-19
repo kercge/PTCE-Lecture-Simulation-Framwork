@@ -13,7 +13,8 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join("share", package_name), glob("launch/*launch.[pxy][yma]*")),
+        (os.path.join("share", package_name, 'launch'), glob("launch/*.py")),
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'decision_making_node = decision_making_package.decision_making_node:main',
+            'dist_decision_making_node = decision_making_package.dist_decision_making_node:main',
         ],
     },
 )

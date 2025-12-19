@@ -25,6 +25,9 @@ devel_isolated/
 *.dox
 *.wikidoc
 
+# Ignore VSCode settings
+.vscode/
+
 # eclipse stuff
 .project
 .cproject
@@ -49,3 +52,12 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Local IDE/cache
+.vscode/
+.vscode/*.db
+
+# ROS2 build artifacts
+build/
+install/
+log/
